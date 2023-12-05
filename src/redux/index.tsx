@@ -4,7 +4,7 @@ import { composeWithDevTools } from '@redux-devtools/extension';
 type ActionType = {
   type: string;
 }
-const INITIAL_STATE = { count: 0 }
+const INITIAL_STATE = { count: 10 }
 
 const reducer = (state = INITIAL_STATE, action: ActionType) => state;
 
