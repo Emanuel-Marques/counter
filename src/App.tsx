@@ -4,9 +4,12 @@ import { clickCounter } from './redux/actions/index';
 import './App.css'
 
 type RootState = {
-  count: number;
-  clicks: number;
+  counterReducer : {
+    count: number;
+    clicks: number;
+  }
 }
+
 function App() {
   const rootState = useSelector((state: RootState) => state);
   const dispatch = useDispatch();
@@ -20,9 +23,9 @@ function App() {
     <main>
       <div className="counter-container">
         <h1>Contador</h1>
-        <h2>{rootState.count}</h2>
+        <h2>{ rootState.counterReducer.count }</h2>
         <h1>Clicks</h1>
-        <h2>{rootState.clicks}</h2>
+        <h2>{ rootState.counterReducer.clicks }</h2>
       </div>
       <div className="button-container">
         <button onClick={() => handleClick()}>Incrementa 1</button>
